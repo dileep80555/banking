@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login Page</title>
+<style>
+body {
+	
+	border: 6px solid black;
+	width: 300px;
+	margin-left: 470px;
+	margin-top: 200px;
+	height: 200px;
+	border-radius: 7px;
+	box-shadow: 20px 10px 10px;
+	
+	background-image: url("https://img.freepik.com/premium-vector/online-banking-technology-concept-illustration-bank-electric-circuit-lines-background_387612-43.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+		
+}
+#a{
+background-color: fuchsia;
+height: 200px;
+width: 300px;
+
+background-image: url("https://png.pngtree.com/background/20210710/original/pngtree-bank-event-poster-background-material-picture-image_1008148.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+
+}
+</style>
+</head>
+<body>
+<nav id="a">
+<form action="clogin" method="post">
+<table>
+<tr>
+<th>CustID:</th>
+<td><input type="tel" name="cid" placeholder="Enter Cust ID" pattern="[0-9]{8}"></td>
+</tr><br>
+<tr>
+<th>Password:</th>
+<td><input type="password" name="pwd" placeholder="Enter Password"> </td>
+</tr><br>
+<tr>
+<td><button type="reset">Cancel</button> </td>
+<td><button>Login</button></td>
+</tr>
+</table>
+</form>
+<br>
+<a href="Signup.html">New user?Click here to Signup</a><br><br>
+<a href="Home.html"><button>Home</button> </a>
+</nav>
+</body>
+</html>

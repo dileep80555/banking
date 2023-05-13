@@ -1,0 +1,38 @@
+package controller;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import dao.BankDao;
+import dto.BankAccount;
+
+@WebServlet("/changestatus")
+public class ChangeStatus extends HttpServlet
+{
+
+	@Override
+	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		long acno=Long.parseLong(req.getParameter("acno"));
+		
+		BankDao dao=new BankDao();
+		BankAccount account=dao.find(acno);
+		
+		if(account.isStatus())
+		{
+			account.setStatus(false);
+		}
+		else{
+			account.setStatus(true);
+		}
+		dao.update(account);
+		
+		resp.getWriter().print("<h1>Update success</h1>");
+		req.setAttribute("list", dao.fetchAll());
+		req.getRequestDispatcher("AdminHome.jsp").include(req, resp);
+	}
+}
